@@ -56,7 +56,7 @@
                     <div class="col col-12 col-lg-8 ">
                         <div>
                             <h1>Richiesta preventivo</h1>
-                            <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
+                            <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo.</p>
                         </div>
 
                         <form>
@@ -67,7 +67,7 @@
                             </div>
                             <!-- Field for user last name -->
                             <div class="mb-3">
-                                <label for="user-lastname" class="form-label">Nome</label>
+                                <label for="user-lastname" class="form-label">Cognome</label>
                                 <input type="text" class="form-control" id="user-lastname">
                             </div>
                             <!-- Field for user email -->
@@ -101,13 +101,15 @@
                                 <label class="form-check-label" for="exampleCheck1">Accetto la Privacy Policy</label>
                             </div>
                             <!-- Section containing the form submit button and the result -->
-                            <div class="row">
-                                <div class="mb-3 text-center col-12 col-lg-6">
+                            <div class="row ">
+                                <div class="mb-3 text-center col-12 col-lg-6 align-self-center">
                                     <button type="submit" class="btn btn-primary">Calcola preventivo</button>
                                 </div>
+                                <!-- Section for final price print -->
                                 <div class="mb-3 text-center col-12 col-lg-6 d-none">
                                     <h4>Prezzo finale</h4>
                                     <h3>
+                                        <!-- Currency symbol is separated because more currencies could be added later -->
                                         <span id="price-currency">€</span>
                                         <span id="price-int">200<small id="price-cents"
                                                 class="fw-light">,00</small></span>
@@ -120,7 +122,9 @@
 
                     </div>
                     <!-- Column containing the card with company info -->
-                    <div class="col col-12 col-lg-4 "></div>
+                    <div class="col col-12 col-lg-4 ">
+
+                    </div>
                 </div>
 
 
