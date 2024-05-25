@@ -95,13 +95,25 @@
                                 <label for="user-discount" class="form-label">Codice Promozionale (opzionale)</label>
                                 <input type="text" class="form-control" id="user-discount">
                             </div>
-
+                            <!-- Field for privacy policy -->
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Accetto la Privacy Policy</label>
                             </div>
-                            <div class="mb-3 text-center">
-                                <button type="submit" class="btn btn-primary">Calcola preventivo</button>
+                            <!-- Section containing the form submit button and the result -->
+                            <div class="row">
+                                <div class="mb-3 text-center col-12 col-lg-6">
+                                    <button type="submit" class="btn btn-primary">Calcola preventivo</button>
+                                </div>
+                                <div class="mb-3 text-center col-12 col-lg-6">
+                                    <h4>Prezzo finale</h4>
+                                    <h3>
+                                        <span id="price-currency">€</span>
+                                        <span id="price-int">200<small id="price-cents"
+                                                class="fw-light">,00</small></span>
+                                    </h3>
+                                </div>
+
                             </div>
                         </form>
 
