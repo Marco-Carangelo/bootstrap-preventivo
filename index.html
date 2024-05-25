@@ -52,7 +52,62 @@
         <main>
             <div class="container col-12 col-lg-10">
                 <div class="row ">
-                    <div class="col col-12 col-lg-8 "></div>
+                    <!-- Column containing form and user information -->
+                    <div class="col col-12 col-lg-8 ">
+                        <div>
+                            <h1>Richiesta preventivo</h1>
+                            <p>Compila il form per richiedere un preventivo per i nostri servizi di sviluppo</p>
+                        </div>
+
+                        <form>
+                            <!-- Field for user name -->
+                            <div class="mb-3">
+                                <label for="user-name" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="user-name">
+                            </div>
+                            <!-- Field for user last name -->
+                            <div class="mb-3">
+                                <label for="user-lastname" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="user-lastname">
+                            </div>
+                            <!-- Field for user email -->
+                            <div class="mb-3">
+                                <label for="user-email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp">
+                            </div>
+                            <!-- Field for job type selection -->
+                            <div class="mb-3">
+                                <label for="job-type" class="form-label">Tipo di lavoro</label>
+                                <select class="form-select" id="job-type" aria-label="Default select example">
+                                    <option selected>Seleziona il tipo di lavoro</option>
+                                    <option value="1">Sviluppo backend</option>
+                                    <option value="2">Sviluppo frontend</option>
+                                    <option value="3">Analisi progettuale</option>
+                                </select>
+                            </div>
+                            <!-- Field for additional information -->
+                            <div class="mb-3">
+                                <label for="user-info" class="form-label">Informazioni aggiuntive</label>
+                                <textarea class="form-control" id="user-info" rows="3"></textarea>
+                            </div>
+                            <!-- Field for discount code -->
+                            <div class="mb-3">
+                                <label for="user-discount" class="form-label">Codice Promozionale (opzionale)</label>
+                                <input type="text" class="form-control" id="user-discount">
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Accetto la Privacy Policy</label>
+                            </div>
+                            <div class="mb-3 text-center">
+                                <button type="submit" class="btn btn-primary">Calcola preventivo</button>
+                            </div>
+                        </form>
+
+
+                    </div>
+                    <!-- Column containing the card with company info -->
                     <div class="col col-12 col-lg-4 "></div>
                 </div>
 
