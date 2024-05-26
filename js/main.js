@@ -78,23 +78,36 @@ estimateCalc.addEventListener('submit', function (event) {
         },
         {
             description: 'Analisi progettuale',
-            hourPrice: 15.30,
+            hourPrice: 33.60,
             duration: 10,
         },
 
     ]
 
-    //Recupero la selezione dell'utente dal form
+    //Get the HTML select element in a variable
+    const userSelection = document.getElementById('service-type');
 
-    //Lancio una funzione per calcolare il prezzo finale e lo salvo in una variabile
+    //Price calculation function
+    let finalPrice = priceCalc(services[userSelection.value]);
 
-    //Se ha diritto allo sconto moltiplico per 0.75
+    //Check if the user have a discount applied
+    if (discountResult) {
+        finalPrice = finalPrice * 0.75;
+    }
 
-    //Stampo il prezzo finale tramite una funzione
+    //Result print function
 
 
 })
 
-//Funzione per il calcolo del prezzo
+//Function for  final price calculation
+function priceCalc(service) {
+
+    //Use the parameters of the object passed as a function paramenter to calculate the price and save the result in a variable
+    const result = service.hourPrice * service.duration;
+
+    return result;
+}
 
 //Funzione per la stampa del prezzo
+
