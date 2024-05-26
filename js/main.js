@@ -1,5 +1,7 @@
 'use strict'
 
+
+
 // ****** DISCOUNT CODE ******
 
 //Get the discount field 
@@ -64,40 +66,48 @@ estimateCalc.addEventListener('submit', function (event) {
     //Prevent the page reload at click
     event.preventDefault();
 
-    //Object containing the services informations
-    const services = [
-        {
-            description: 'Sviluppo backend',
-            hourPrice: 20.50,
-            duration: 10,
-        },
-        {
-            description: 'Sviluppo frontend',
-            hourPrice: 15.30,
-            duration: 10,
-        },
-        {
-            description: 'Analisi progettuale',
-            hourPrice: 33.60,
-            duration: 10,
-        },
+    //Execute the main program only if the form il validated
+    if (estimateCalc.checkValidity()) {
 
-    ]
+        //Object containing the services informations
+        const services = [
+            {
+                description: 'Sviluppo backend',
+                hourPrice: 20.50,
+                duration: 10,
+            },
+            {
+                description: 'Sviluppo frontend',
+                hourPrice: 15.30,
+                duration: 10,
+            },
+            {
+                description: 'Analisi progettuale',
+                hourPrice: 33.60,
+                duration: 10,
+            },
 
-    //Get the HTML select element in a variable
-    const userSelection = document.getElementById('service-type');
+        ]
 
-    //Price calculation function
-    let finalPrice = priceCalc(services[userSelection.value]);
+        //Get the HTML select element in a variable
+        const userSelection = document.getElementById('service-type');
 
-    //Check if the user have a discount applied
-    if (discountResult) {
-        finalPrice = finalPrice * 0.75;
+        //Price calculation function
+        let finalPrice = priceCalc(services[userSelection.value]);
+
+        //Check if the user have a discount applied
+        if (discountResult) {
+            finalPrice = finalPrice * 0.75;
+        }
+
+        //Result print function
+        resultPrint(finalPrice);
+    } else {
+        event.stopPropagation();
+
     }
 
-    //Result print function
-    resultPrint(finalPrice);
-
+    estimateCalc.classList.add('was-validated')
 })
 
 //Function for  final price calculation
@@ -130,3 +140,6 @@ function resultPrint(price) {
     priceDisplay.classList.remove('invisible');
 
 }
+
+
+
