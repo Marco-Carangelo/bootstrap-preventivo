@@ -1,0 +1,6 @@
+MILESTONE 1. Richiesta preventivo.
+
+1. Il primo evento da gestire nella pagina è il campo del codice promozionale. Questo perchè vogliamo che il codice sia validato prima che l'utente invii il form, in modo da comunicargli un eventuale errore di digitazione prima di effettuare il calcolo.
+Nel caso implementassimo la validazione del codice sul click dell'invio del form, un eventuale errore verrebbe comunicato all'utente a calcolo già effettuato, quindi l'utente procederebbe ad inserire il codice valido e reinviare il form, quindi si può ipotizzare che al server arriverebbero due form con risultati diversi.
+Creeremo una funzione per validare il codice promozionale che verrà scatenata dal cambiamento del campo relativo nel dom, che visualizzerà un messaggio per allertare l'utente ogni volta che nel campo ci sarà inserita una stringa diversa dai codici validi ed un messaggio per avvisarlo quando verrà inserito un codice corretto.
+I codici validi saranno contenuti in un array di stringhe e li confronteremo con l'input dell'utente ogni volta che avverrà un cambiamento nel campo.
