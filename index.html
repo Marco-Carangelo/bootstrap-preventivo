@@ -77,12 +77,12 @@
                             </div>
                             <!-- Field for job type selection -->
                             <div class="mb-3">
-                                <label for="job-type" class="form-label">Tipo di lavoro</label>
-                                <select class="form-select" id="job-type" aria-label="Default select example">
+                                <label for="service-type" class="form-label">Tipo di lavoro</label>
+                                <select class="form-select" id="service-type" aria-label="Default select example">
                                     <option selected>Seleziona il tipo di lavoro</option>
-                                    <option value="1">Sviluppo backend</option>
-                                    <option value="2">Sviluppo frontend</option>
-                                    <option value="3">Analisi progettuale</option>
+                                    <option value="0">Sviluppo backend</option>
+                                    <option value="1">Sviluppo frontend</option>
+                                    <option value="2">Analisi progettuale</option>
                                 </select>
                             </div>
                             <!-- Field for additional information -->
@@ -98,8 +98,8 @@
                             </div>
                             <!-- Field for privacy policy -->
                             <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Accetto la Privacy Policy</label>
+                                <input type="checkbox" class="form-check-input" id="privacy-check">
+                                <label class="form-check-label" for="privacy-check">Accetto la Privacy Policy</label>
                             </div>
                             <!-- Section containing the form submit button and the result -->
                             <div class="row ">
@@ -107,13 +107,12 @@
                                     <button type="submit" class="btn btn-primary">Calcola preventivo</button>
                                 </div>
                                 <!-- Section for final price print -->
-                                <div class="mb-3 text-center col-12 col-lg-6 d-none">
+                                <div class="mb-3 text-center col-12 col-lg-6 invisible" id="price-display">
                                     <h4>Prezzo finale</h4>
                                     <h3>
                                         <!-- Currency symbol is separated because more currencies could be added later -->
-                                        <span id="price-currency">€</span>
-                                        <span id="price-int">200<small id="price-cents"
-                                                class="fw-light">,00</small></span>
+                                        <span id="price-currency"></span>
+                                        <span id="price-int"></span>
                                     </h3>
                                 </div>
 

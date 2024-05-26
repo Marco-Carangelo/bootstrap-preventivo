@@ -96,7 +96,7 @@ estimateCalc.addEventListener('submit', function (event) {
     }
 
     //Result print function
-
+    resultPrint(finalPrice);
 
 })
 
@@ -110,4 +110,23 @@ function priceCalc(service) {
 }
 
 //Funzione per la stampa del prezzo
+function resultPrint(price) {
 
+    //Define a variable for the price currencuy. Can be updated to an array if other currencies are added
+    const currency = '€';
+
+    //Get the Html elements where the price is going to be printed
+    const priceCurrency = document.getElementById('price-currency');
+    const priceInt = document.getElementById('price-int');
+    const priceDisplay = document.getElementById('price-display');
+
+    //Save the price first two decimal in a variable and force it into a tow digits string
+    const cents = String((price.toFixed(2) % 1) * 100).padStart(2, '0');
+
+    //Print the result         
+    priceCurrency.innerText = currency;
+    priceInt.innerHTML = parseInt(price) + `<small class="fw-light">,${cents}</small>`;
+
+    priceDisplay.classList.remove('invisible');
+
+}
