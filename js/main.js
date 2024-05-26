@@ -64,4 +64,37 @@ estimateCalc.addEventListener('submit', function (event) {
     //Prevent the page reload at click
     event.preventDefault();
 
+    //Object containing the services informations
+    const services = [
+        {
+            description: 'Sviluppo backend',
+            hourPrice: 20.50,
+            duration: 10,
+        },
+        {
+            description: 'Sviluppo frontend',
+            hourPrice: 15.30,
+            duration: 10,
+        },
+        {
+            description: 'Analisi progettuale',
+            hourPrice: 15.30,
+            duration: 10,
+        },
+
+    ]
+
+    //Recupero la selezione dell'utente dal form
+
+    //Lancio una funzione per calcolare il prezzo finale e lo salvo in una variabile
+
+    //Se ha diritto allo sconto moltiplico per 0.75
+
+    //Stampo il prezzo finale tramite una funzione
+
+
 })
+
+//Funzione per il calcolo del prezzo
+
+//Funzione per la stampa del prezzo
