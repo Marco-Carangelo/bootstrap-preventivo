@@ -53,3 +53,15 @@ userDiscount.addEventListener('keyup', function () {
 }
 )
 
+// ****** MAIN PROGRAM - ESTIMATE CALCULATION ******
+
+//Get the HTML form element
+const estimateCalc = document.getElementById('estimate-calc');
+
+//Main program on click of the submit button
+estimateCalc.addEventListener('submit', function (event) {
+
+    //Prevent the page reload at click
+    event.preventDefault();
+
+})
