@@ -4,13 +4,12 @@
 
 //Get the discount field 
 const userDiscount = document.getElementById('user-discount');
-console.log(userDiscount);
 
 //Define a boolean variable for the discount result inizialized to false
 let discountResult = false;
 
 //Function for user discount code validation
-discountResult = userDiscount.addEventListener('keyup', function () {
+function discountValidation() {
 
     //Define an array with all the valid discount code
     const validDiscount = ['YHDNU32', 'JANJC63', 'PWKCN25', 'SJDPO96', 'POCIE24'];
@@ -46,4 +45,11 @@ discountResult = userDiscount.addEventListener('keyup', function () {
     //If the function don't enter the control it return a false value
     return false;
 }
+
+//Run the discount validation function on field change and assign the result to a variable
+userDiscount.addEventListener('keyup', function () {
+    discountResult = discountValidation();
+
+}
 )
+
