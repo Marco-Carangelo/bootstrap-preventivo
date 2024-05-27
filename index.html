@@ -64,28 +64,38 @@
                             <div class="mb-3">
                                 <label for="user-name" class="form-label">Nome</label>
                                 <input type="text" class="form-control" id="user-name" required>
+                                <div class="invalid-feedback">
+                                    Inserisci un nome valido
+                                </div>
                             </div>
                             <!-- Field for user last name -->
                             <div class="mb-3">
                                 <label for="user-lastname" class="form-label">Cognome</label>
                                 <input type="text" class="form-control" id="user-lastname" required>
+                                <div class="invalid-feedback">
+                                    Inserisci un cognome valido
+                                </div>
                             </div>
                             <!-- Field for user email -->
                             <div class="mb-3">
                                 <label for="user-email" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp"
                                     required>
+                                <div class="invalid-feedback">
+                                    Inserisci una email valida
+                                </div>
                             </div>
                             <!-- Field for job type selection -->
                             <div class="mb-3">
                                 <label for="service-type" class="form-label">Tipo di lavoro</label>
                                 <select class="form-select" id="service-type" aria-label="Default select example"
                                     required>
-                                    <option selected>Seleziona il tipo di lavoro</option>
+                                    <option selected disabled value="">Seleziona il tipo di lavoro</option>
                                     <option value="0">Sviluppo backend</option>
                                     <option value="1">Sviluppo frontend</option>
                                     <option value="2">Analisi progettuale</option>
                                 </select>
+
                             </div>
                             <!-- Field for additional information -->
                             <div class="mb-3">
@@ -102,6 +112,9 @@
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="privacy-check" required>
                                 <label class="form-check-label" for="privacy-check">Accetto la Privacy Policy</label>
+                                <div class="invalid-feedback">
+                                    Accetta le policy sulla privacy per continuare
+                                </div>
                             </div>
                             <!-- Section containing the form submit button and the result -->
                             <div class="row ">
