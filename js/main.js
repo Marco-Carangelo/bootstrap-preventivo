@@ -1,7 +1,5 @@
 'use strict'
 
-
-
 // ****** DISCOUNT CODE ******
 
 //Get the discount field 
@@ -55,10 +53,37 @@ userDiscount.addEventListener('keyup', function () {
 }
 )
 
+
+
+
+
 // ****** MAIN PROGRAM - ESTIMATE CALCULATION ******
 
 //Get the HTML form element
 const estimateCalc = document.getElementById('estimate-calc');
+
+//Object containing the services informations
+const services = [
+    {
+        description: 'Sviluppo backend',
+        hourPrice: 20.50,
+        duration: 10,
+    },
+    {
+        description: 'Sviluppo frontend',
+        hourPrice: 15.30,
+        duration: 10,
+    },
+    {
+        description: 'Analisi progettuale',
+        hourPrice: 33.60,
+        duration: 10,
+    },
+]
+
+//Populate the select menu 
+selectPopulation(services);
+
 
 //Main program on click of the submit button
 estimateCalc.addEventListener('submit', function (event) {
@@ -68,26 +93,6 @@ estimateCalc.addEventListener('submit', function (event) {
 
     //Execute the main program only if the form il validated
     if (estimateCalc.checkValidity()) {
-
-        //Object containing the services informations
-        const services = [
-            {
-                description: 'Sviluppo backend',
-                hourPrice: 20.50,
-                duration: 10,
-            },
-            {
-                description: 'Sviluppo frontend',
-                hourPrice: 15.30,
-                duration: 10,
-            },
-            {
-                description: 'Analisi progettuale',
-                hourPrice: 33.60,
-                duration: 10,
-            },
-
-        ]
 
         //Get the HTML select element in a variable
         const userSelection = document.getElementById('service-type');
@@ -110,7 +115,10 @@ estimateCalc.addEventListener('submit', function (event) {
     estimateCalc.classList.add('was-validated')
 })
 
-//Function for  final price calculation
+
+// ****** FUNCTIONS ******
+
+//Function for final price calculation
 function priceCalc(service) {
 
     //Use the parameters of the object passed as a function paramenter to calculate the price and save the result in a variable
@@ -119,7 +127,8 @@ function priceCalc(service) {
     return result;
 }
 
-//Funzione per la stampa del prezzo
+
+//Function that display the price result
 function resultPrint(price) {
 
     //Define a variable for the price currencuy. Can be updated to an array if other currencies are added
@@ -141,5 +150,21 @@ function resultPrint(price) {
 
 }
 
+//Function for populating the select menu
+
+function selectPopulation(jobs) {
+
+    //Get the select element from Html
+    const userSelection = document.getElementById('service-type');
+
+    for (let i = 0; i < jobs.length; i++) {
+        let optn = jobs[i];
+        let el = document.createElement("option");
+        el.textContent = optn.description;
+        el.value = i;
+        userSelection.appendChild(el);
+    }
+
+}
 
 
