@@ -26,12 +26,16 @@ function discountValidation() {
         //If the value in the text area is included in the strings array visualize the success label
         if (validDiscount.includes(upUserDiscount)) {
 
+            userDiscount.classList.remove('bg-danger-subtle', 'text-danger')
+            userDiscount.classList.add('bg-success-subtle', 'text-success')
             resultLabel.innerText = 'Il codice sconto inserito è valido';
             resultLabel.classList.remove('invisible', 'bg-danger-subtle', 'border-danger-subtle', 'text-danger');
             resultLabel.classList.add('bg-success-subtle', 'border-success-subtle', 'text-success');
             return true;
 
         } else {
+            userDiscount.classList.remove('bg-success-subtle', 'text-success')
+            userDiscount.classList.add('bg-danger-subtle', 'text-danger')
             resultLabel.innerText = 'Il codice sconto inserito non è valido';
             resultLabel.classList.remove('invisible', 'bg-success-subtle', 'border-success-subtle', 'text-success');
             resultLabel.classList.add('bg-danger-subtle', 'border-danger-subtle', 'text-danger');
@@ -39,6 +43,7 @@ function discountValidation() {
         }
 
     }
+    userDiscount.classList.remove('bg-danger-subtle', 'text-danger', 'bg-success-subtle', 'text-success')
     resultLabel.innerText = '';
     resultLabel.classList.add('invisible');
 
@@ -53,7 +58,7 @@ userDiscount.addEventListener('keyup', function () {
 }
 )
 
-
+//// ****** DISCOUNT CODE - END ******
 
 
 
@@ -97,7 +102,6 @@ const userSelection = document.getElementById('service-type');
 //Populate the select menu 
 selectPopulation(services);
 
-
 //Main program on click of the submit button
 estimateCalc.addEventListener('submit', function (event) {
 
@@ -124,6 +128,9 @@ estimateCalc.addEventListener('submit', function (event) {
 
     estimateCalc.classList.add('was-validated')
 })
+
+// ****** MAIN PROGRAM - ESTIMATE CALCULATION - END ******
+
 
 
 // ****** FUNCTIONS ******
@@ -174,4 +181,5 @@ function selectPopulation(jobs) {
 
 }
 
+// ****** FUNCTIONS - END ******
 
