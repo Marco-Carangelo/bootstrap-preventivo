@@ -91,6 +91,9 @@ const services = [
     },
 ]
 
+//Get the select element from Html
+const userSelection = document.getElementById('service-type');
+
 //Populate the select menu 
 selectPopulation(services);
 
@@ -101,11 +104,8 @@ estimateCalc.addEventListener('submit', function (event) {
     //Prevent the page reload at click
     event.preventDefault();
 
-    //Execute the main program only if the form il validated
+    //Execute the main program only if the form has valid data
     if (estimateCalc.checkValidity()) {
-
-        //Get the HTML select element in a variable
-        const userSelection = document.getElementById('service-type');
 
         //Price calculation function
         let finalPrice = priceCalc(services[userSelection.value]);
@@ -163,9 +163,6 @@ function resultPrint(price) {
 //Function for populating the select menu
 
 function selectPopulation(jobs) {
-
-    //Get the select element from Html
-    const userSelection = document.getElementById('service-type');
 
     for (let i = 0; i < jobs.length; i++) {
         let optn = jobs[i];
