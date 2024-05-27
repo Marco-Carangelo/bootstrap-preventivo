@@ -79,6 +79,16 @@ const services = [
         hourPrice: 33.60,
         duration: 10,
     },
+    {
+        description: 'Sviluppo App mobile',
+        hourPrice: 24.30,
+        duration: 10,
+    },
+    {
+        description: 'Sviluppo realtà aumentata',
+        hourPrice: 42.90,
+        duration: 10,
+    },
 ]
 
 //Populate the select menu 
