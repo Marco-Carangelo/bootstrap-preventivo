@@ -19,8 +19,8 @@
         <!-- header section of the page -->
         <header>
             <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body mb-4" data-bs-theme="dark">
-
                 <div class="container-fluid col-12 col-lg-10 justify-content-between">
+                    <!-- Brand on the left side of the nav bar -->
                     <a class="navbar-brand" href="#">Bool Factory</a>
                     <!--Flex item containing the navigation element on the right side of the bar-->
                     <div>
@@ -52,6 +52,7 @@
         <main>
             <div class="container col-12 col-lg-10 mb-4 ">
                 <div class="row ">
+
                     <!-- Column containing form and user information -->
                     <div class="col col-12 col-lg-8 ">
                         <div>
@@ -61,6 +62,7 @@
 
                         <!-- User input form -->
                         <form action="index.html" id="estimate-calc" class="needs-validation " method="get" novalidate>
+
                             <!-- Field for user name -->
                             <div class="mb-3">
                                 <label for="user-name" class="form-label">Nome</label>
@@ -70,6 +72,7 @@
                                     Inserisci un nome valido
                                 </div>
                             </div>
+
                             <!-- Field for user last name -->
                             <div class="mb-3">
                                 <label for="user-lastname" class="form-label">Cognome</label>
@@ -79,6 +82,7 @@
                                     Inserisci un cognome valido
                                 </div>
                             </div>
+
                             <!-- Field for user email -->
                             <div class="mb-3">
                                 <label for="user-email" class="form-label">Email</label>
@@ -88,6 +92,7 @@
                                     Inserisci una email valida
                                 </div>
                             </div>
+
                             <!-- Field for job type selection -->
                             <div class="mb-3">
                                 <label for="service-type" class="form-label">Tipo di lavoro</label>
@@ -98,20 +103,25 @@
                                 </select>
 
                             </div>
+
                             <!-- Field for additional information -->
                             <div class="mb-3">
                                 <label for="user-info" class="form-label">Informazioni aggiuntive</label>
                                 <textarea class="form-control" id="user-info" name="user-info"
                                     placeholder="Inserisci qualsiasi informazione aggiuntiva" rows="3"></textarea>
                             </div>
+
                             <!-- Field for discount code -->
                             <div class="mb-3">
                                 <label for="user-discount" class="form-label">Codice Promozionale (opzionale)</label>
                                 <input type="text" class="form-control" id="user-discount" name="user-discount"
                                     placeholder="Inserisci un codice sconto se ne hai uno" maxlength="7">
+
+                                <!-- Label used to inform the user on the discount code validity -->
                                 <span class="badge border p-1 invisible" id="discount-result"
                                     name="discount-result"></span>
                             </div>
+
                             <!-- Field for privacy policy -->
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="privacy-check" name="privacy-check"
@@ -121,26 +131,30 @@
                                     Accetta le policy sulla privacy per continuare
                                 </div>
                             </div>
+
                             <!-- Section containing the form submit button and the result -->
                             <div class="row ">
+
+                                <!-- Submit button -->
                                 <div class="mb-3 text-center col-12 col-lg-6 align-self-center">
                                     <button type="submit" class="btn btn-primary">Calcola preventivo</button>
                                 </div>
-                                <!-- Section for final price print -->
+
+                                <!-- Section for final price print. Initially set to invisible -->
                                 <div class="mb-3 text-center col-12 col-lg-6 invisible" id="price-display">
                                     <h4>Prezzo finale</h4>
                                     <h3>
                                         <!-- Currency symbol is separated because more currencies could be added later -->
                                         <span id="price-currency"></span>
-                                        <span id="price-int"></span>
+                                        <span id="price-value"></span>
                                     </h3>
                                 </div>
-
                             </div>
                         </form>
                         <!-- /User input form -->
-
                     </div>
+                    <!-- /Column containing form and user information -->
+
                     <!-- Column containing the card with company info -->
                     <div class="col col-12 col-lg-4 ">
                         <div class="card mx-auto" style="width: 18rem;">
@@ -158,6 +172,8 @@
                             </div>
                         </div>
                     </div>
+                    <!-- /Column containing the card with company info -->
+
                 </div>
 
 

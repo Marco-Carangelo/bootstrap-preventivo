@@ -24,6 +24,7 @@ function discountValidation() {
     if (upUserDiscount) {
 
         //If the value in the text area is included in the strings array visualize the success label
+        //Before any variation on the result label, the previous classes must be deleted to not overlap them to the new ones
         if (validDiscount.includes(upUserDiscount)) {
 
             userDiscount.classList.remove('bg-danger-subtle', 'text-danger')
@@ -43,11 +44,11 @@ function discountValidation() {
         }
 
     }
+    //If the function don't enter the control, it restore the original status of the result label and return a false value
+
     userDiscount.classList.remove('bg-danger-subtle', 'text-danger', 'bg-success-subtle', 'text-success')
     resultLabel.innerText = '';
     resultLabel.classList.add('invisible');
-
-    //If the function don't enter the control it return a false value
     return false;
 }
 
@@ -58,16 +59,13 @@ userDiscount.addEventListener('keyup', function () {
 }
 )
 
-//// ****** DISCOUNT CODE - END ******
+// ****** DISCOUNT CODE - END ******
 
 
 
-// ****** MAIN PROGRAM - ESTIMATE CALCULATION ******
+// ****** SELECT MENU POPULATION ******
 
-//Get the HTML form element
-const estimateCalc = document.getElementById('estimate-calc');
-
-//Object containing the services informations
+//Define a object containing the services informations
 const services = [
     {
         description: 'Sviluppo backend',
@@ -101,6 +99,14 @@ const userSelection = document.getElementById('service-type');
 
 //Populate the select menu 
 selectPopulation(services);
+
+// ****** SELECT MENU POPULATION - END ******
+
+
+// ****** MAIN PROGRAM - ESTIMATE CALCULATION ******
+
+//Get the HTML form element
+const estimateCalc = document.getElementById('estimate-calc');
 
 //Main program on click of the submit button
 estimateCalc.addEventListener('submit', function (event) {
@@ -148,21 +154,22 @@ function priceCalc(service) {
 //Function that display the price result
 function resultPrint(price) {
 
-    //Define a variable for the price currencuy. Can be updated to an array if other currencies are added
+    //Define a variable for the price currencuy. Can be updated to an array if other currencies are added later
     const currency = '€';
 
     //Get the Html elements where the price is going to be printed
     const priceCurrency = document.getElementById('price-currency');
-    const priceInt = document.getElementById('price-int');
+    const priceValue = document.getElementById('price-value');
     const priceDisplay = document.getElementById('price-display');
 
-    //Save the price first two decimal in a variable and force it into a tow digits string
+    //Save the price first two decimal in a variable and force it in a two digits string
     const cents = String((price.toFixed(2) % 1) * 100).padStart(2, '0');
 
-    //Print the result         
+    //Print the currency value in a SPAN element     
     priceCurrency.innerText = currency;
-    priceInt.innerHTML = parseInt(price) + `<small class="fw-light">,${cents}</small>`;
-
+    //Print the price value in a SPAN element, separating the integer part and the decimal part using interpolation
+    priceValue.innerHTML = parseInt(price) + `<small class="fw-light">,${cents}</small>`;
+    //Remove the invisible class to the price display section
     priceDisplay.classList.remove('invisible');
 
 }
@@ -172,10 +179,13 @@ function resultPrint(price) {
 function selectPopulation(jobs) {
 
     for (let i = 0; i < jobs.length; i++) {
+        //Assign the current array element to a variable
         let optn = jobs[i];
+        //Create an option element and set is values
         let el = document.createElement("option");
         el.textContent = optn.description;
         el.value = i;
+        //Add the created element to the select
         userSelection.appendChild(el);
     }
 
